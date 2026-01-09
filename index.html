@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Neo Treasury</title>
+  <link rel="icon" href="favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="index.css">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Neo Foundation Treasury Overview">
+  <meta property="og:description" content="Overview of assets and holdings managed by Neo Foundation co-founders, including real-time NEO and GAS balances and valuations.">
+  <meta name="twitter:image" content="https://neotreasury.github.io/cover.png" />
+  <meta name="twitter:site" content="@Neo_Blockchain" />
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Neo Foundation Treasury Overview">
+  <meta name="twitter:description" content="Overview of assets and holdings managed by Neo Foundation co-founders, including real-time NEO and GAS balances and valuations.">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="header-top">
+        <div>
+          <h1>Neo Foundation Treasury Overview</h1>
+          <p class="subtitle">Combined on-chain assets controlled by Neo co-founders</p>
+        </div>
+        <div class="price-info">
+          <div class="price-item">
+            <span class="dot green"></span>
+            <span class="label">NEO</span>
+            <span class="value" id="neoPriceDisplay">$4.00</span>
+            <span class="change" id="neoChange">↘ -1.46%</span>
+          </div>
+          <div class="price-item">
+            <span class="dot yellow"></span>
+            <span class="label">GAS</span>
+            <span class="value" id="gasPriceDisplay">$2.21</span>
+            <span class="change" id="gasChange">↗ +1.85%</span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section class="summary-card">
+      <div class="summary-header">
+        <div class="icon-box green"><img src="https://neo.japaneast.cloudapp.azure.com/summary.png" class="summary-img"></div>
+        <div>
+          <h3>Combined Treasury Summary</h3>
+          <p class="label">Total assets controlled by both co-founders (44 addresses)</p>
+        </div>
+      </div>
+      <div class="summary-grid">
+        <div class="stat-box"><div class="stat-label">Total Value (USD)</div><div class="stat-value" id="totalValue">$228,421,681</div></div>
+        <div class="stat-box"><div class="stat-label">Total NEO</div><div class="stat-value green">36,370,673</div></div>
+        <div class="stat-box"><div class="stat-label">Total GAS</div><div class="stat-value yellow">37,528,954.17</div></div>
+      </div>
+    </section>
+
+    <section class="founder-tabs">
+      <div class="founder-tab active" data-founder="dahongfei">
+        <div class="founder-header">
+          <div class="founder-name"><span class="dot blue"></span><span>Da Hongfei</span></div>
+          <span class="badge blue">22 addresses</span>
+        </div>
+        <div class="founder-stats">
+          <div><div class="stat-label">NEO</div><div class="stat-value">6,700,017</div></div>
+          <div><div class="stat-label">GAS</div><div class="stat-value">2,926,878.56</div></div>
+        </div>
+      </div>
+      <div class="founder-tab" data-founder="erikzhang">
+        <div class="founder-header">
+          <div class="founder-name"><span class="dot purple"></span><span>Erik Zhang</span></div>
+          <span class="badge">22 addresses</span>
+        </div>
+        <div class="founder-stats">
+          <div><div class="stat-label">NEO</div><div class="stat-value">29,670,656</div></div>
+          <div><div class="stat-label">GAS</div><div class="stat-value">34,602,075.61</div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="info-cards">
+      <div class="info-card"><div class="info-header"><span class="info-label" id="labelValue">Da Hongfei - Total Value (USD)</span></div><div class="info-value" id="founderValue">$33,268,470</div></div>
+      <div class="info-card"><div class="info-header"><span class="info-label" id="labelNeo">Da Hongfei - NEO Holdings</span></div><div class="info-value" id="founderNeo">6,700,017</div></div>
+      <div class="info-card"><div class="info-header"><span class="info-label" id="labelGas">Da Hongfei - GAS Holdings</span></div><div class="info-value" id="founderGas">2,926,878.56</div></div>
+    </section>
+
+    <section class="burn-calculator">
+      <div class="burn-header" id="burnToggle">
+        <div class="burn-title">
+          <div class="icon-box red"><svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.986-7C14 5 16.09 5.777 17.656 7.343A7.975 7.975 0 0120 13a7.975 7.975 0 01-2.343 5.657z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.879 16.121A3 3 0 1012.015 11L11 14H9c0 .768.293 1.536.879 2.121z"></path></svg></div>
+          <h3>BURN RATE CALCULATOR</h3>
+        </div>
+        <div class="burn-summary">
+          <div><div class="stat-label">Runway</div><div class="runway-value" id="runwaySmall">11y 1m</div></div>
+          <svg class="chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+        </div>
+      </div>
+      <div class="burn-content" id="burnContent">
+        <div class="burn-grid">
+          <div class="burn-left">
+            <div class="price-inputs">
+              <div class="input-group"><div class="input-label">NEO Price</div><div class="input-wrap"><span>$</span><input type="number" id="neoPrice" value="4" step="0.01"></div></div>
+              <div class="input-group"><div class="input-label">GAS Price</div><div class="input-wrap"><span>$</span><input type="number" id="gasPrice" value="2.21" step="0.01"></div></div>
+            </div>
+            <div class="expenses">
+              <div class="expenses-header"><div class="input-label">Monthly Burn</div></div>
+              <div class="expense-item"><div class="dot blue"></div><span>Core Development</span><div class="expense-value"><input type="text" value="100,000" data-expense="0"></div><span class="freq">/mo</span></div>
+              <div class="expense-item"><div class="dot purple"></div><span>Team Operations</span><div class="expense-value"><input type="text" value="100,000" data-expense="1"></div><span class="freq">/mo</span></div>
+              <div class="expense-item"><div class="dot pink"></div><span>Other Expenses</span><div class="expense-value"><input type="text" value="50,000" data-expense="2"></div><span class="freq">/mo</span></div>
+              <div class="expenses-total">Total: <span id="monthlyTotal">$250,000</span>/mo</div>
+            </div>
+            <div class="pie-section">
+              <svg viewBox="0 0 100 100" class="pie-chart">
+                <path d="M 50 50 L 50 10 A 40 40 0 0 1 73.51 82.36 Z" fill="#3b82f6" opacity="0.85"></path>
+                <path d="M 50 50 L 73.51 82.36 A 40 40 0 0 1 11.96 37.64 Z" fill="#8b5cf6" opacity="0.85"></path>
+                <path d="M 50 50 L 11.96 37.64 A 40 40 0 0 1 50 10 Z" fill="#ec4899" opacity="0.85"></path>
+                <circle cx="50" cy="50" r="20" fill="#1a2634"></circle>
+              </svg>
+              <div class="pie-legend">
+                <div class="legend-item"><div class="dot blue"></div><span>Core Development</span><span>40%</span></div>
+                <div class="legend-item"><div class="dot purple"></div><span>Team Operations</span><span>40%</span></div>
+                <div class="legend-item"><div class="dot pink"></div><span>Other Expenses</span><span>20%</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="burn-right">
+            <div class="result-box"><div class="result-label">Treasury Value</div><div class="result-value" id="treasuryValue">$33,268,470</div><div class="result-sub" id="treasurySub">6,700,017 NEO + 2,926,878.56 GAS</div></div>
+            <div class="result-box"><div class="result-label">Monthly Burn</div><div class="result-value red" id="monthlyBurn">-$250,000</div><div class="result-sub">$3,000,000/year</div></div>
+            <div class="result-box highlight"><div class="result-label">Treasury Runway</div><div class="result-value big green" id="runway">11y 1m</div><div class="result-sub" id="runwayMonths">133 months</div></div>
+            <div class="burn-rate"><span>Burn Rate</span><span class="green" id="burnRate">9.02%/yr</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="verify-banner">
+      <div class="verify-icon"><svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg></div>
+      <div><h3>Verifiable On-Chain Assets</h3><p id="verifyText">All <strong>22 addresses</strong> displayed below are exclusively managed by Da Hongfei and can be independently verified on the Neo blockchain.</p></div>
+    </section>
+
+    <section class="address-table">
+      <div class="table-header">
+        <h2>Address Management</h2>
+        <input type="text" placeholder="Search address..." id="searchInput">
+      </div>
+      <table>
+        <thead><tr><th>Address</th><th class="center">NEO Balance</th><th class="center">GAS Balance</th><th class="center">Value (USD)</th><th>Voting For</th></tr></thead>
+        <tbody id="addressTable"></tbody>
+      </table>
+    </section>
+  </div>
+  <script src="index.js"></script>
+</body>
+</html>
